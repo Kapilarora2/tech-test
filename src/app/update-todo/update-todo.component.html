@@ -1,0 +1,21 @@
+<div style="height: 100%;width: 100%;">
+    <form style="height: 100%;width: 100%;" [formGroup]="todoForm" (ngSubmit)="updateTodo()">
+      <mat-form-field style="width: 100%;" >
+        <input matInput placeholder="Label" formControlName="label">
+      </mat-form-field><br>
+      <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Description" formControlName="description">
+      </mat-form-field><br>
+      <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Category" formControlName="category">
+      </mat-form-field>
+      <mat-form-field style="width: 100%;">
+        <input matInput placeholder="Status" formControlName="done">
+           
+      </mat-form-field>
+      <div >
+        <button mat-dialog-close style="float:right;" mat-flat-button color="primary">Cancel</button>
+        <button mat-dialog-close style="float:right;margin-right: 5px;" type="submit" [disabled]="!todoForm.valid" mat-flat-button color="primary">Update</button>
+      </div>
+    </form>
+</div>

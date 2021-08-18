@@ -1,0 +1,12 @@
+
+<mat-list style="background-color: darkgray">
+  <ng-container *ngFor="let todo of todoList$ | async">
+    <om-todo-item
+      [todo]="todo"
+      (todoClick)="todoClickHander($event)" (todoUpdateClickEvent)="todoUpdateClickHander($event)" (todoDeleteClickEvent)="todoDeleteClickHander($event)"></om-todo-item>
+    <mat-divider></mat-divider>
+  </ng-container>
+</mat-list>
+<div style="width: 100%;padding-top: 5px;">
+  <button style="float: right;margin-right: 5px;" type="button" mat-flat-button color="primary" (click)="addTodo()">Add Todo</button>
+</div>
